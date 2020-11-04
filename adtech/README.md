@@ -23,13 +23,13 @@ Your SingleStore cluster must be able to read from an Amazon S3 bucket.
 
 To create the tables and load data into them, run the following script by pasting the contents into the SQL Editor section of SingleStore Studio and clicking the "Run" button:
 
-https://github.com/memsql/reference_solutions/adtech/create_tables.sql
+https://github.com/memsql/reference_solutions/blob/master/adtech/create_tables.sql
 
 Each table has a corresponding pipeline that loads from a compressed tab-separated file. Each file is available in a `small`, `medium`, and `large` variants. For example, the default is to load `events-large.tsv.gz`, but you could also chooe from `events-small.tsv.gz` or `events-medium.tsv.gz`.
 
 ## Benchmarks
 
-To validate the performance of this reference solution on your SingleStore cluster, see [benchmarks/README.md][benchmarks/README.md].
+To validate the performance of this reference solution on your SingleStore cluster, see [benchmarks/README.md](benchmarks/README.md).
 
 ## Looker Dashboards
 
