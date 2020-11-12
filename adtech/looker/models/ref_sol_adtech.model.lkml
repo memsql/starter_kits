@@ -21,4 +21,8 @@ explore: events {
   }
 }
 
-explore: campaign_facts{}
+explore: campaign_facts {}
+
+explore: networks {}
+
+explore: platforms {}

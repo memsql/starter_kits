@@ -14,12 +14,12 @@ view: campaigns {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
-  
+
   dimension: end_date {
     type:  date
     sql:  ${TABLE}.end_date ;;
   }
-  
+
   dimension: is_active_now {
     type: yesno
     sql:  ${TABLE}.is_active_now ;;

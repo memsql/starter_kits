@@ -89,6 +89,72 @@ func main() {
 	}
 
 	file.Close()
+
+	var maxNetworks int
+
+	switch os.Args[1] {
+	case "small":
+		maxNetworks = 10
+	case "medium":
+		maxNetworks = 100
+	case "large":
+		maxNetworks = 1_000
+	default:
+		printUsage()
+	}
+
+	file, err = os.Create("networks-" + os.Args[1] + ".tsv")
+
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	for i := 1; i <= maxNetworks; i++ {
+		s := fmt.Sprintf("%v\t%v\n", i, gofakeit.Company())
+
+		_, err = io.WriteString(file, s)
+
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+	}
+
+	file.Close()
+
+	var maxPlatforms int
+
+	switch os.Args[1] {
+	case "small":
+		maxPlatforms = 10
+	case "medium":
+		maxPlatforms = 100
+	case "large":
+		maxPlatforms = 1_000
+	default:
+		printUsage()
+	}
+
+	file, err = os.Create("platforms-" + os.Args[1] + ".tsv")
+
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	for i := 1; i <= maxPlatforms; i++ {
+		s := fmt.Sprintf("%v\t%v\n", i, gofakeit.Company())
+
+		_, err = io.WriteString(file, s)
+
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+	}
+
+	file.Close()
 }
 
 func printUsage() {
