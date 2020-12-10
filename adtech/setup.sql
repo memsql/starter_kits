@@ -88,13 +88,14 @@ create table metrics (
    event_date date not null
   ,impressions integer default 0
   ,spend decimal(9,2) deault 0
-  ,platform_id integer not null
   ,campaign_id integer not null
+  ,platform_id integer not null
 );
 
 create table offers (
-   id integer not null
+   offer_id integer not null
   ,network_id integer not null
   ,merchant_id text not null
   ,target_domain text not null
+  ,primary key (offer_id)
 );

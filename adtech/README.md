@@ -1,6 +1,6 @@
 # Solution Brief
 
-This reference solution is an accelerator for the adtech industry. It provides table structures, common queries, Looker dashboards, and benchmarks to help you get started with SingleStore.
+This reference solution is an accelerator for the adtech industry. It provides table structures, common queries, Looker dashboards, and benchmarks to help you get started with SingleStore DB.
 
 This solution provides the following suggested tables:
 
@@ -11,13 +11,13 @@ This solution provides the following suggested tables:
 * Offers: items available from merchants
 * Traffic Platforms: companies that serve ads to users
 
-**TODO:** ER diagram
+![er_diagram.png](er_diagram.png)
 
 ## System Requirements
 
-The examples that follow have been tested on a SingleStoreDB `S2` cluster with 16 vCPUs, 128 GB RAM, and 2 TB of disk.
+The examples that follow have been tested on a SingleStore DB `S0` cluster with 2 vCPUs, 16 GB RAM, and 256 GB of disk.
 
-Your SingleStore cluster must be able to read from an Amazon S3 bucket.
+Your SingleStore DB cluster must be able to read from an Amazon S3 bucket.
 
 ## Creating Tables and Loading Sample Data
 
@@ -29,7 +29,7 @@ Each table has a corresponding pipeline that loads from a compressed tab-separat
 
 ## Benchmarks
 
-To validate the performance of this reference solution on your SingleStore cluster, see [benchmarks/README.md](benchmarks/README.md).
+To validate the performance of this reference solution on your SingleStore DB cluster, see [benchmarks/README.md](benchmarks/README.md).
 
 ## Looker Dashboards
 

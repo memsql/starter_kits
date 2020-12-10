@@ -1,4 +1,4 @@
-1. After logging into your Looker instance, create a connection to your SingleStore cluster by visiting Admin > Connections > Add Connection. Fill in the required fields, making sure to select `MemSQL` as the dialect.
+1. After logging into your Looker instance, create a connection to your SingleStore DB cluster by visiting Admin > Connections > Add Connection. Fill in the required fields, making sure to select `MemSQL` as the dialect.
 1. Visit Develop > Manage LookML Projects.
 1. Click "New LookML Project".
 1. Click "Enter Developer Mode".

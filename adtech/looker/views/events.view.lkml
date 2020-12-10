@@ -56,6 +56,7 @@ view: events {
 
   measure: cost {
     type:  sum
+    sql:  ${TABLE}.total_cost ;;
     drill_fields: [advertiser, campaigns.campaign_name, count]
   }
 

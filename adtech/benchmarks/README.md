@@ -1,29 +1,36 @@
 # Benchmarks
 
-To validate the performance of this reference solution on your SingleStore cluster, use [dbbench](https://github.com/memsql/dbbench/blob/master/README.md) with a command line similar to this one:
+To validate the performance of this reference solution on your SingleStore DB cluster, use [dbbench](https://github.com/memsql/dbbench/blob/master/README.md) with a command line similar to this one:
 
 ```bash
 dbbench --host=example.com --username=admin --password=12345 --intermediate-stats=false adtech.ini
 ```
 
-The results below are from the `large` data sets on a SingleStoreDB `S2` cluster with 16 vCPUs, 128 GB RAM, and 2 TB of disk:
+The results below are from the `large` data sets on a SingleStore DB `S0` cluster with 2 vCPUs, 16 GB RAM, and 256 GB of disk:
 
 ```
-campaign facts: 100 transactions (17.524 TPS), latency 56.96827ms±8.024163ms; 0 rows (0.000 RPS), 100 queries (17.524 QPS); 0 aborts (0.000%), latency 0s±0s
+campaign facts: 30 transactions (8.308 TPS), latency 120.300883ms±44.343461ms; 0 rows (0.000 RPS), 30 queries (8.308 QPS); 0 aborts (0.000%), latency 0s±0s
 Transactions:
- 33.554432ms -  67.108864ms [    76]: ██████████████████████████████████████████████████
- 67.108864ms - 134.217728ms [    20]: █████████████▏
-134.217728ms - 268.435456ms [     4]: ██▋
+ 67.108864ms - 134.217728ms [    28]: ██████████████████████████████████████████████████
+134.217728ms - 268.435456ms [     1]: █▊
+268.435456ms - 536.870912ms [     0]: 
+536.870912ms - 1.073741824s [     1]: █▊
 
-impressions per campaign: 100 transactions (6.093 TPS), latency 164.034887ms±11.449111ms; 100 rows (6.093 RPS), 100 queries (6.093 QPS); 0 aborts (0.000%), latency 0s±0s
+spend per advertiser: 30 transactions (4.386 TPS), latency 227.96454ms±68.407821ms; 15870 rows (2320.170 RPS), 30 queries (4.386 QPS); 0 aborts (0.000%), latency 0s±0s
 Transactions:
- 67.108864ms - 134.217728ms [    25]: █████████████████▎
-134.217728ms - 268.435456ms [    72]: ██████████████████████████████████████████████████
-268.435456ms - 536.870912ms [     3]: ██
+ 67.108864ms - 134.217728ms [     6]: ███████████████▊
+134.217728ms - 268.435456ms [    19]: ██████████████████████████████████████████████████
+268.435456ms - 536.870912ms [     4]: ██████████▌
+536.870912ms - 1.073741824s [     1]: ██▋
 
-ctr_per_country: 100 transactions (5.565 TPS), latency 179.611536ms±10.634211ms; 23900 rows (1329.940 RPS), 100 queries (5.565 QPS); 0 aborts (0.000%), latency 0s±0s
+impressions per campaign: 30 transactions (0.746 TPS), latency 1.340303697s±212.908291ms; 30 rows (0.746 RPS), 30 queries (0.746 QPS); 0 aborts (0.000%), latency 0s±0s
 Transactions:
- 67.108864ms - 134.217728ms [    15]: █████████
-134.217728ms - 268.435456ms [    83]: ██████████████████████████████████████████████████
-268.435456ms - 536.870912ms [     2]: █▏
+1.073741824s - 2.147483648s [    29]: ██████████████████████████████████████████████████
+2.147483648s - 4.294967296s [     1]: █▋
+
+ctr_per_country: 30 transactions (0.696 TPS), latency 1.436779262s±269.644705ms; 7170 rows (166.336 RPS), 30 queries (0.696 QPS); 0 aborts (0.000%), latency 0s±0s
+Transactions:
+536.870912ms - 1.073741824s [     3]: █████▊
+1.073741824s - 2.147483648s [    26]: ██████████████████████████████████████████████████
+2.147483648s - 4.294967296s [     1]: █▉
 ```
