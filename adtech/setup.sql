@@ -69,7 +69,7 @@ into table platforms;
 start pipeline load_platforms;
 
 create table commissions (
-   commission_id int not null default'0',
+   commission_id int not null default'0'
   ,network_id integer not null
   ,event_time datetime not null
   ,advertiser_name text not null
@@ -87,7 +87,7 @@ create table daily_profit (
 create table metrics (
    event_date date not null
   ,impressions integer default 0
-  ,spend decimal(9,2) deault 0
+  ,spend decimal(9,2) default 0
   ,campaign_id integer not null
   ,platform_id integer not null
 );
